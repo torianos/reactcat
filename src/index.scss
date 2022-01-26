@@ -1,0 +1,285 @@
+$black: #2c323a;
+$background: #f8f8f8;
+$white: #ffffff;
+$border: #ebebeb;
+$button: #ff97bb;
+$hoverbutton: #eb5284;
+$closebutton: #ee1c62;
+$lightblue: #70c8e5;
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url("./img/background.jpg");
+  background-color: #f8aec5 !important;
+  background-repeat: no-repeat;
+  cursor: url("../src/img/cur1.png") 1 1, auto;
+}
+button:hover {
+  cursor: url("../src/img/cur2.png") 1 1, pointer;
+}
+// #root {
+//   cursor: url("../src/img/pack2662.png ") 50 50, auto;
+// }
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.maincat {
+  // padding: 5rem;
+  margin: 0 auto;
+  width: auto;
+}
+.loading {
+  margin: auto auto;
+  text-align: center;
+  margin-top: 250px;
+  span {
+    width: 100px !important;
+    height: 100px !important;
+    color: white !important;
+  }
+}
+.menubar {
+  background-color: white !important;
+  color: black !important;
+}
+.formcat {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  width: 100%;
+}
+.css-i9gxme {
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+  header {
+    color: black;
+    background-color: white;
+  }
+}
+header {
+  background-color: $lightblue !important;
+}
+
+.changebooking {
+  background-color: #70c8e5 !important;
+  color: white !important;
+  div {
+    color: white !important;
+  }
+}
+.css-xn6ruc > :not(style) {
+  // margin: 8px;
+  width: 40ch !important;
+}
+.btn-submit {
+  display: flex;
+  justify-content: space-between;
+  button {
+    width: 150px !important;
+  }
+
+  .button:nth-child(1) {
+    background-color: rgb(121, 216, 121) !important;
+  }
+  button:nth-child(1) {
+    background-color: #60cc52 !important;
+  }
+
+  button:nth-child(2) {
+    background: $button;
+  }
+  button:nth-child(2):hover {
+    background: $hoverbutton;
+  }
+}
+.helpedit {
+  display: flex;
+  justify-content: center;
+  width: 360px;
+  height: 40px;
+  border-radius: 4px;
+  margin: 0 20px;
+  background: #70c8e5;
+  color: white;
+  align-items: center;
+}
+.addkitty {
+  width: 360px;
+  margin: 0 20px;
+  button {
+    width: 100%;
+    height: 40px;
+    margin: 0 auto;
+    background-color: $lightblue;
+    text-transform: none;
+    // font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+.accept {
+  color: $hoverbutton !important;
+}
+.closebtn {
+  color: #60cc52 !important;
+}
+.MuiDialogTitle-root {
+  color: #5eb5d1 !important;
+}
+////////////////////// GRID CARDS
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 270px);
+  justify-content: center;
+  gap: 30px;
+  // padding: 5rem 2rem;
+  .MuiButton-root {
+    color: $hoverbutton !important;
+  }
+  .MuiButton-root:hover {
+    color: $closebutton !important;
+  }
+
+  .MuiSvgIcon-root {
+    color: $button;
+  }
+  .MuiSvgIcon-root:hover {
+    color: $hoverbutton;
+  }
+  .deletecat {
+    width: 15px !important;
+    min-width: 15px !important;
+    background: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+  }
+  .deletecat:hover {
+    background: none !important;
+    border: none !important;
+  }
+}
+
+.wrap-card {
+  height: 365px;
+  width: 270px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 20px rgba(86, 86, 86, 0.05);
+  overflow: hidden;
+  background: $white;
+}
+.bordergreen {
+  border: 2px solid lightgreen;
+}
+.borderred {
+  border: 2px solid $closebutton;
+}
+.wrap-card:hover {
+  box-shadow: 0px 5px 20px rgba(86, 86, 86, 0.25);
+  transition: all 0.3s ease;
+  .body-card {
+    height: 200px;
+    transition: all 0.3s ease;
+  }
+  .body-card-image {
+    width: 186px;
+    height: 152px;
+    transition: all 0.3s ease;
+  }
+}
+sup {
+  font-size: 8px;
+}
+.head-card {
+  height: 28px;
+  margin: 8px 10px 4px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.head-card-floor {
+  padding-top: 4px;
+  // opacity: 0.5;
+  line-height: 28px;
+}
+.head-card-space {
+  margin: 0 10px;
+  width: 5px;
+}
+.head-card-rooms {
+  margin-left: auto;
+}
+
+.body-card {
+  width: 250px;
+  height: 250px;
+  margin: 0 10px;
+  background: #ffffff;
+  border: 1px solid #ebebeb;
+  box-sizing: border-box;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.body-card-number {
+  justify-content: space-between;
+  display: flex;
+  padding: 4px 0 4px 4px;
+}
+.body-card-image {
+  margin: 0 auto 31px auto;
+  width: 230px;
+  height: 188px;
+  transition: all 0.3s ease;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.footer-card-price {
+  margin: 11px 15px 0 15px;
+  font-size: 20px;
+  text-align: right;
+}
+.footer-card-pricesquare {
+  margin: 0px 15px 10px 15px;
+  text-align: right;
+  opacity: 0.5;
+  height: 28px;
+}
+.settingscat:hover {
+  cursor: url("../src/img/cur2.png") 1 1, pointer;
+}
+/// Переопределенные стили
+.footer-card {
+  .MuiButton-root {
+    display: block !important;
+    margin: 0 10px !important;
+    width: 250px !important;
+    // background: $button !important;
+    color: $white !important;
+  }
+  .MuiButton-root:hover {
+    // background: $hoverbutton !important;
+    color: $white !important;
+  }
+  .booked {
+    background: $button !important;
+  }
+  .booked:hover {
+    background: $hoverbutton !important;
+  }
+  .nobooked {
+    background: rgb(121, 216, 121) !important;
+  }
+  .nobooked:hover {
+    background: #60cc52 !important;
+  }
+}
