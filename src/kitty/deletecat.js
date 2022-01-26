@@ -54,7 +54,7 @@ function DeleteCat(props) {
         onClose={handleClose}
         aria-labelledby="responsive-dialog-title"
       >
-        <DialogTitle id="responsive-dialog-title">
+        <DialogTitle id="responsive-dialog-title" className="dialoghead">
           {"Вы действительно хотите удалить этого милого котика?"}
         </DialogTitle>
         <DialogContent>
