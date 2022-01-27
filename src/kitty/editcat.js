@@ -6,7 +6,9 @@ import FormControl, { useFormControl } from "@mui/material/FormControl";
 import MenuItem from "@mui/material/MenuItem";
 import PropTypes from "prop-types";
 
-// пробовал запихать всё в одну переменную внутри state, но внутреннее состояние каждого ключа сложно отслеживать.
+// пробовал запихать всё в одну переменную внутри state, однако сложно менять через setState вложенные какие-то данные,
+// нужно подменивать всю переменную целиком
+// по этой же причине не получилось запустить this.setState через цикл
 export default class EditCat extends React.Component {
   constructor(props) {
     super(props);
@@ -25,19 +27,20 @@ export default class EditCat extends React.Component {
     };
     this.submitHandler = this.submitHandler.bind(this);
   }
-
+  // !!!Почему-то вызывается дважды!!!
   componentDidUpdate(prevProps) {
     if (this.props.infocat !== prevProps.infocat && this.props.infocat !== "") {
+      this.setState({ infocat: this.props.infocat });
       this.setState({ id: this.props.infocat.id });
       this.setState({ nameCat: this.props.infocat.nameCat });
       this.setState({ age: this.props.infocat.age });
       this.setState({ price: this.props.infocat.price });
+      this.setState({ color: this.props.infocat.color });
       this.setState({
         breed: this.state.breedslist.find((obj) => {
           return obj.breedID == this.props.infocat.breed.breedID;
         }),
       });
-      this.setState({ color: this.props.infocat.color });
     }
     if (this.props.breeds !== prevProps.breeds) {
       this.setState({ breedslist: this.props.breeds });

@@ -50,9 +50,8 @@ function App() {
       }
     );
 
-    let result = await response.json();
-    // мне не нравилась ошибка 404
-    if (Array.isArray(result)) {
+    if (response.ok) {
+      let result = await response.json();
       // Я решил добавить всем котикам изображение и ИСКУССТВЕННО добавить задержку, чтобы показать лоадер
       setTimeout(() => {
         SetList(
@@ -70,23 +69,27 @@ function App() {
   }
   // Получить список пород
   async function GetCatBreeds() {
-    let response = await fetch(
-      "https://internship.apps.robotbull.com/cats/get/get_all_breeds",
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json;charset=utf-8",
-        },
-      }
-    );
+    try {
+      let response = await fetch(
+        "https://internship.apps.robotbull.com/cats/get/get_all_breeds",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json;charset=utf-8",
+          },
+        }
+      );
 
-    let result = await response.json();
-    result.map((breed) => {
-      delete breed["cats"];
-      // delete breed["createdAt"];
-      return breed;
-    });
-    SetBreeds(result);
+      let result = await response.json();
+      result.map((breed) => {
+        delete breed["cats"];
+        return breed;
+      });
+      SetBreeds(result);
+    } catch {
+      SetBreeds([]);
+      console.log("Ошибка списка пород");
+    }
   }
   // Добавить/редактировать котика
   function addCat(form) {
@@ -154,8 +157,8 @@ function App() {
     );
   }
   // Запрос на бронирование, разбронирование
-  function querybooking(id, value) {
-    fetch(
+  async function querybooking(id, value) {
+    let query = await fetch(
       value
         ? "https://internship.apps.robotbull.com/cats/unbook_cat/" + id
         : "https://internship.apps.robotbull.com/cats/book_cat/" + id,
@@ -166,6 +169,12 @@ function App() {
         },
       }
     );
+
+    // Проверка, если что-то пошло не так
+    if (!query.ok) {
+      alert("Ошибка HTTP: " + query.status + ". Попробуйте позже.");
+      bookedToggle(booked);
+    }
   }
 
   // Удаление котика
