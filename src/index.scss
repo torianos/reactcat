@@ -50,7 +50,7 @@ code {
 .formcat {
   display: flex;
   flex-direction: column;
-  margin: 1rem;
+  margin: 10px;
   width: 100%;
 }
 .css-i9gxme {
@@ -75,7 +75,7 @@ header {
 }
 .css-xn6ruc > :not(style) {
   // margin: 8px;
-  width: 40ch !important;
+  width: 90% !important;
 }
 .btn-submit {
   display: flex;
@@ -102,21 +102,23 @@ header {
 .helpedit {
   display: flex;
   justify-content: center;
-  width: 360px;
+  // width: 360px;
   height: 40px;
   border-radius: 4px;
-  margin: 0 20px;
+  margin: 0 10px;
   background: #70c8e5;
   color: white;
   align-items: center;
 }
 .addkitty {
-  width: 360px;
-  margin: 0 20px;
+  width: 100%;
+  /* margin: 0 20px; */
+  display: flex;
+  justify-content: center;
   button {
     width: 100%;
     height: 40px;
-    margin: 0 auto;
+    margin: 0 10px;
     background-color: $lightblue;
     text-transform: none;
     // font-weight: bold;
@@ -283,4 +285,7 @@ sup {
   .nobooked:hover {
     background: #60cc52 !important;
   }
+}
+.css-18mw8gn-MuiFormControl-root {
+  width: 100% !important;
 }
