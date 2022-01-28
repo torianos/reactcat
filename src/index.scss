@@ -6,6 +6,7 @@ $button: #ff97bb;
 $hoverbutton: #eb5284;
 $closebutton: #ee1c62;
 $lightblue: #70c8e5;
+// Насчет стилей особо не заморачивался
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -288,4 +289,8 @@ sup {
 }
 .css-18mw8gn-MuiFormControl-root {
   width: 100% !important;
+}
+.css-h4y409-MuiList-root {
+  max-width: 100% !important;
+  margin: 0 10px !important;
 }
