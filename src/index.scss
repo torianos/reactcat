@@ -294,3 +294,7 @@ sup {
   max-width: 100% !important;
   margin: 0 10px !important;
 }
+.mainscroll {
+  max-height: 100vh;
+  overflow-y: auto;
+}

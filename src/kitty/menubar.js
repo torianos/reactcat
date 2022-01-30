@@ -161,6 +161,7 @@ function MenuBar(props) {
           p: 3,
           width: { sm: `calc(100% - ${drawerWidth}px)` },
         }}
+        className="mainscroll"
       >
         <Toolbar />
         {props.loading && (

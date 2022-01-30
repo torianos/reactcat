@@ -92,25 +92,46 @@ function App() {
     }
   }
   // Добавить/редактировать котика
-  function addCat(form) {
+  async function addCat(form) {
     // запрос на добавление не работает
     if (newcatstate == "create") {
-      // Иллюзия запроса на клиенте
-      SetList(
-        list.concat([
-          {
-            id: Math.random(),
-            nameCat: form.nameCat,
-            breed: form.breed,
-            color: form.color,
-            price: form.price,
-            age: form.age,
-            image: "1489052030_kotik-hosiko-12.jpg",
-            isBooked: false,
-            createdAt: "2021-10-03 19:35:44.458634",
+      let body = {
+        name: form.nameCat,
+        price: form.price,
+        color: form.color,
+        nameBreed: form.breed.nameBreed,
+        age: form.age,
+      };
+      let response = await fetch(
+        "https://internship.apps.robotbull.com/cats/create_cat/" + form.id,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json;charset=utf-8",
           },
-        ])
+          body: JSON.stringify(body),
+        }
       );
+      if (response.ok) {
+        // Иллюзия запроса на клиенте
+        SetList(
+          list.concat([
+            {
+              id: Math.random(),
+              nameCat: form.nameCat,
+              breed: form.breed,
+              color: form.color,
+              price: form.price,
+              age: form.age,
+              image: "1489052030_kotik-hosiko-12.jpg",
+              isBooked: false,
+              createdAt: "2021-10-03 19:35:44.458634",
+            },
+          ])
+        );
+      } else {
+        alert("Ошибка HTTP: " + response.status + ". Попробуйте позже.");
+      }
 
       // запрос на редактирование работает неккоректно
     } else if (newcatstate == "edit") {
@@ -120,7 +141,7 @@ function App() {
         color: form.color,
         nameBreed: form.breed.nameBreed,
       };
-      fetch(
+      let response = await fetch(
         "https://internship.apps.robotbull.com/cats/update_cat/" + form.id,
         {
           method: "PUT",
@@ -131,7 +152,11 @@ function App() {
         }
       );
       // обновление данных
-      bookedToggle(booked);
+      if (response.ok) {
+        bookedToggle(booked);
+      } else {
+        alert("Ошибка HTTP: " + response.status + ". Попробуйте позже.");
+      }
     }
     toggleCreate("none");
   }
@@ -158,7 +183,7 @@ function App() {
   }
   // Запрос на бронирование, разбронирование
   async function querybooking(id, value) {
-    let query = await fetch(
+    let response = await fetch(
       value
         ? "https://internship.apps.robotbull.com/cats/unbook_cat/" + id
         : "https://internship.apps.robotbull.com/cats/book_cat/" + id,
@@ -171,8 +196,8 @@ function App() {
     );
 
     // Проверка, если что-то пошло не так
-    if (!query.ok) {
-      alert("Ошибка HTTP: " + query.status + ". Попробуйте позже.");
+    if (!response.ok) {
+      alert("Ошибка HTTP: " + response.status + ". Попробуйте позже.");
       bookedToggle(booked);
     }
   }
