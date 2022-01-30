@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/reactcat/static/css/main.1f237fdf.css",
-    "main.js": "/reactcat/static/js/main.a0a78bf6.js",
+    "main.css": "/reactcat/static/css/main.c4cb54fa.css",
+    "main.js": "/reactcat/static/js/main.2ef4fb34.js",
     "static/js/787.0b6f8d0f.chunk.js": "/reactcat/static/js/787.0b6f8d0f.chunk.js",
     "static/media/1489052030_kotik-hosiko-12.jpg": "/reactcat/static/media/1489052030_kotik-hosiko-12.c07c16852670a284f135.jpg",
     "static/media/background.jpg": "/reactcat/static/media/background.d24696e287a4dab980e0.jpg",
     "index.html": "/reactcat/index.html",
-    "main.1f237fdf.css.map": "/reactcat/static/css/main.1f237fdf.css.map",
-    "main.a0a78bf6.js.map": "/reactcat/static/js/main.a0a78bf6.js.map",
+    "main.c4cb54fa.css.map": "/reactcat/static/css/main.c4cb54fa.css.map",
+    "main.2ef4fb34.js.map": "/reactcat/static/js/main.2ef4fb34.js.map",
     "787.0b6f8d0f.chunk.js.map": "/reactcat/static/js/787.0b6f8d0f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1f237fdf.css",
-    "static/js/main.a0a78bf6.js"
+    "static/css/main.c4cb54fa.css",
+    "static/js/main.2ef4fb34.js"
   ]
 }
